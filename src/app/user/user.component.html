@@ -1,0 +1,58 @@
+<!-- 
+<h3>Form</h3>
+<h5>===========================================================================================================================================================================================</h5>
+<form #userForm="ngForm">
+	<div>
+		<label for="name">Name</label>
+		<input id="name" 
+           name="name"
+           type="text"
+           required
+           [(ngModel)]="user.name" />
+  </div>
+
+  <div>
+    <label for="surname">Surname</label>
+    <input id="surname"  
+           name="surname" 
+           type="text" 
+           required
+           [(ngModel)]="user.surname" />
+  </div>
+
+  <div>
+    <label for="email">EMail</label>
+    <input id="email"  
+           name="email" 
+           type="text" 
+           required
+           [(ngModel)]="user.email" />
+  </div>
+
+  <button type="button" (click)="submit()">Submit</button>
+</form>
+
+<h3>Form data</h3>
+{{user | json}} -->
+<html>
+ 
+  <body>
+    <h3>Form</h3>
+    <form #userForm="ngForm" (submit)="onSubmit(userForm)">
+      Name:<input type="text" name="name" ngModel><br><br>
+      Email:<input type="email" name="email" ngModel><br><br>
+      Phone Number:<input type="number" name="phno" ngModel>
+      <br>
+      <br>
+<button type="submit">Submit</button>
+    </form>
+    
+    
+    <ul *ngIf="data2!=null">
+      <h3>Form Data</h3>
+      <li>{{data2.name}}</li>
+      <li>{{data2.email}}</li>
+      <li>{{data2.phno}}</li>
+  </ul>
+  </body>
+</html>

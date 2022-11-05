@@ -1,0 +1,31 @@
+<h3>Integer value => {{a}}</h3>
+<br>
+<h3>String value => {{name}}</h3>
+<br>
+<h3>Current Date and Time => {{date}}</h3>
+<br>
+<h3>Array list :</h3>
+<ul *ngFor="let i of fruits">
+    <li>
+      {{ i }}
+    </li>
+  </ul>
+  <br>
+<h3>Array in Combo</h3>
+<select>
+    <option disabled>Choose from this</option>
+    <option *ngFor="let i of fruits" >
+      <span>{{i}}</span>
+    </option>
+  </select>
+  <h3>Select option and display in textbox</h3>
+  <select  (click)="OnSelect($event)" multiple>
+    <option disabled>Choose from this</option>
+    <option *ngFor="let i of data" [value]="i.name">
+      <span>{{i.name}}</span>
+    </option>
+  </select>
+  <br />
+  <br />
+
+  <textarea  value="{{ selectedItem }}"></textarea>
